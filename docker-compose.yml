@@ -1,0 +1,32 @@
+version: "3.5"
+services:
+  erigon:
+    image: "erigon.goerli-erigon.dnp.dappnode.eth:0.1.0"
+    build:
+      context: erigon
+      args:
+        UPSTREAM_VERSION: v2022.07.04
+    ports:
+      - "30805:30805/tcp"
+      - "30805:30805/udp"
+      - "42369:42369/tcp"
+      - "42369:42369/udp"
+    volumes:
+      - "data:/home/erigon/.local/share"
+    environment:
+      P2P_PORT: 30805
+      BITTORRENT_PORT: 42369
+      ERIGON_EXTRA_OPTS: >-
+        --http.api=engine,eth,erigon,web3,net,debug,trace,txpool --prune htc
+        --prune.r.before=4367322
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
+    deploy:
+      resources:
+        limits:
+          memory: 16384M
+volumes:
+  data: {}
