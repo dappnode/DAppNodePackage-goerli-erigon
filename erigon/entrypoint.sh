@@ -39,8 +39,6 @@ fi
 
 exec erigon --datadir=${DATADIR} \
     --chain=goerli \
-    --engine.port=8551 \
-    --engine.addr=0.0.0.0 \
     --http.addr=0.0.0.0 \
     --http.vhosts=* \
     --http.corsdomain=* \
@@ -54,5 +52,6 @@ exec erigon --datadir=${DATADIR} \
     --port=${P2P_PORT} \
     --torrent.port=${BITTORRENT_PORT} \
     --authrpc.jwtsecret=/jwtsecret \
-    --override.terminaltotaldifficulty=10790000 \
+    --authrpc.addr 0.0.0.0 \
+    --authrpc.vhosts=* \
     ${ERIGON_EXTRA_OPTS}
