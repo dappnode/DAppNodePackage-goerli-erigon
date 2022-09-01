@@ -8,20 +8,17 @@
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
   "chain": "ethereum",
-  "categories": [
-    "Developer tools"
-  ],
-  "architectures": [
-    "linux/amd64"
-  ],
+  "categories": ["Developer tools"],
+  "architectures": ["linux/amd64"],
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Pablo Mendez <mendez4a@gmail.com> (https://github.com/pablomendezroyo)"
   ],
   "links": {
-    "endpoint": "http://goerli-erigon.dappnode:8545",
-    "homepage": "https://github.com/ledgerwatch/erigon"
+    "homepage": "https://github.com/ledgerwatch/erigon",
+    "api": "http://goerli-erigon.dappnode:8545",
+    "api-engine": "http://goerli-erigon.dappnode:8551"
   },
   "mainService": "erigon",
   "license": "GPL-3.0",
@@ -32,6 +29,7 @@
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-erigon/issues"
   },
+  "globalEnvs": [{ "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["erigon"] }],
   "exposable": [
     {
       "name": "Erigon JSON RPC",

@@ -1,5 +1,32 @@
 #!/bin/sh
 
+case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_PRATER" in
+"prysm-prater.dnp.dappnode.eth")
+    echo "Using prysm-prater.dnp.dappnode.eth"
+    JWT_PATH="/security/prysm/jwtsecret.hex"
+    ;;
+"lighthouse-prater.dnp.dappnode.eth")
+    echo "Using lighthouse-prater.dnp.dappnode.eth"
+    JWT_PATH="/security/lighthouse/jwtsecret.hex"
+    ;;
+"teku-prater.dnp.dappnode.eth")
+    echo "Using teku-prater.dnp.dappnode.eth"
+    JWT_PATH="/security/teku/jwtsecret.hex"
+    ;;
+"nimbus-prater.dnp.dappnode.eth")
+    echo "Using nimbus-prater.dnp.dappnode.eth"
+    JWT_PATH="/security/nimbus/jwtsecret.hex"
+    ;;
+*)
+    echo "Using default"
+    JWT_PATH="/security/default/jwtsecret.hex"
+    ;;
+esac
+
+# Print the jwt to the dappmanager
+JWT=$(cat $JWT_PATH)
+curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
+
 #####################
 # Datadir migration #
 #####################
@@ -51,7 +78,7 @@ exec erigon --datadir=${DATADIR} \
     --pprof.port=6061 \
     --port=${P2P_PORT} \
     --torrent.port=${BITTORRENT_PORT} \
-    --authrpc.jwtsecret=/jwtsecret \
+    --authrpc.jwtsecret=${JWT_PATH} \
     --override.terminaltotaldifficulty=10790000 \
     --authrpc.addr 0.0.0.0 \
     --authrpc.vhosts=* \
