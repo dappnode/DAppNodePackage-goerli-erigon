@@ -35,6 +35,9 @@
       "services": ["erigon"]
     }
   ],
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.58"
+  },
   "exposable": [
     {
       "name": "Erigon JSON RPC",
