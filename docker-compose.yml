@@ -27,6 +27,6 @@ services:
     deploy:
       resources:
         limits:
-          memory: 16384M
+          memory: 32768M
 volumes:
   data: {}
