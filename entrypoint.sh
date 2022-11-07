@@ -70,7 +70,6 @@ exec erigon --datadir=${DATADIR} \
     --http.vhosts=* \
     --http.corsdomain=* \
     --ws \
-    --ws.addr=0.0.0.0 \
     --metrics \
     --metrics.addr=0.0.0.0 \
     --metrics.port=6060 \
