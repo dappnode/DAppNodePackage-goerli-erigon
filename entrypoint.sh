@@ -83,7 +83,6 @@ exec erigon --datadir=${DATADIR} \
     --port=${P2P_PORT} \
     --torrent.port=${BITTORRENT_PORT} \
     --authrpc.jwtsecret=${JWT_PATH} \
-    --override.terminaltotaldifficulty=10790000 \
     --authrpc.addr 0.0.0.0 \
     --authrpc.vhosts=* \
     ${ERIGON_EXTRA_OPTS}
