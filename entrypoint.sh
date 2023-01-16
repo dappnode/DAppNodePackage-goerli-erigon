@@ -85,4 +85,5 @@ exec erigon --datadir=${DATADIR} \
     --authrpc.jwtsecret=${JWT_PATH} \
     --authrpc.addr 0.0.0.0 \
     --authrpc.vhosts=* \
+    --externalcl \
     ${ERIGON_EXTRA_OPTS}
