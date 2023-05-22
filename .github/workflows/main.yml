@@ -25,11 +25,11 @@ jobs:
     if: github.event_name != 'push'
     name: End to end tests
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npx @dappnode/dappnodesdk@latest github-action test-end-to-end --errorLogsTimeout 120 --healthCheckUrl http://goerli-erigon.dappnode:8545 --network prater
         env:
           VALIDATOR_INDEX: ${{ secrets.PRATER_VALIDATOR_INDEX }}
-          
+
   release:
     name: Release
     runs-on: ubuntu-latest
