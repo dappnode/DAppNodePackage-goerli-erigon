@@ -40,10 +40,16 @@
   },
   "exposable": [
     {
-      "name": "Erigon JSON RPC",
-      "description": "JSON RPC endpoint for Erigon goerli",
+      "name": "Goerli Erigon JSON RPC",
+      "description": "JSON RPC endpoint for Goerli Erigon",
+      "serviceName": "erigon",
+      "port": 8545
+    },
+    {
+      "name": "Goerli Erigon JSON RPC (WS)",
+      "description": "JSON RPC WebSocket endpoint for Goerli Erigon",
       "serviceName": "erigon",
       "port": 8545
     }
-  ]
+  ],
 }
