@@ -13,7 +13,8 @@
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
-    "Pablo Mendez <mendez4a@gmail.com> (https://github.com/pablomendezroyo)"
+    "Pablo Mendez <mendez4a@gmail.com> (https://github.com/pablomendezroyo)",
+    "Voss <voss@visnovalabs.io> (https://github.com/alexpeterson91)"
   ],
   "links": {
     "homepage": "https://github.com/ledgerwatch/erigon",
