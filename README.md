@@ -6,4 +6,4 @@ Erigon is an implementation of Ethereum (execution client), on the efficiency fr
 
 |      Updated       | Champion/s |
 | :----------------: | :--------: |
-| :heavy_check_mark: | @tropicar  |
+| :heavy_check_mark: | @alexpeterson91 |
