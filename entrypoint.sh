@@ -85,4 +85,5 @@ exec erigon --datadir=${DATADIR} \
     --authrpc.jwtsecret=${JWT_PATH} \
     --authrpc.addr 0.0.0.0 \
     --authrpc.vhosts=* \
+    --db.size.limit=8TB \
     ${ERIGON_EXTRA_OPTS}
